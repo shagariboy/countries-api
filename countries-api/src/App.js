@@ -6,7 +6,7 @@ import Filter from "./components/Filter";
 import Header from "./components/Header";
 import Paginations from "./components/Paginations";
 import CountryDetails from "./components/CountryDetails";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   //States
@@ -86,42 +86,39 @@ function App() {
   //JSX
   return (
     <Router>
-      <div className="App">
+      element= {<div className="App">
         <Header clickHandler={darkModeHandler} darkMode={darkMode} />
-        <Switch>
-          <Route exact path={process.env.PUBLIC_URL + "/"}>
-            <div className="search-filter">
-              <Search changeHandler={changeHandler} darkMode={darkMode} />
-              <Filter
-                changeHandler={filterHandler}
-                region={region}
-                darkMode={darkMode}
-              />
-            </div>
-            <div className="countries-container">
-              <Countries
-                data={searchRes}
-                page={pageNo}
-                darkMode={darkMode}
-                handler={selCountryHandler}
-              />
-            </div>
+        <Routes>
+          <Route exact path={process.env.PUBLIC_URL + "/"}
+           element={ <><div className="search-filter">
+             <Search changeHandler={changeHandler} darkMode={darkMode} />
+             <Filter
+               changeHandler={filterHandler}
+               region={region}
+               darkMode={darkMode} />
+           </div><div className="countries-container">
+               <Countries
+                 data={searchRes}
+                 page={pageNo}
+                 darkMode={darkMode}
+                 handler={selCountryHandler} />
+             </div>
             <Paginations
               changeHandler={paginationHandler}
               resultsCount={searchRes.length}
               darkMode={darkMode}
-            />
+            /> </> } >
           </Route>
-          <Route>
-            <CountryDetails
+          <Route
+           element={ <CountryDetails
               exact
               path={`${process.env.PUBLIC_URL}/${countrySelectedName}`}
               data={countrySelectedName}
               darkMode={darkMode}
-            />
+            /> }>
           </Route>
-        </Switch>
-      </div>
+        </Routes>
+      </div> }
     </Router>
   );
 }
