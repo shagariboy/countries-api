@@ -1,4 +1,6 @@
 
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /* -------------------- Dark Mode -------------------- */
 .dark-mode {
   background-color: hsl(209, 23%, 22%) !important;
@@ -8,11 +10,13 @@
   background-color: hsl(207, 26%, 17%) !important;
 }
 
-.dark-mode-text {
+
+
+.dark-mode-a {
   color: white !important;
 }
 body {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
   background-color: hsl(0, 0%, 98%);
@@ -52,7 +56,7 @@ a {
 
 .toggle p {
   font-weight: 600;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 /* -------------------- Search -------------------- */
 .search-container {
@@ -84,7 +88,7 @@ a {
   padding: 1rem;
 }
 .MuiSelect-root {
-  background-color: white;
+  background-color: hsl(209, 23%, 22%);
   border-radius: 1rem;
   filter: drop-shadow(0 0.3rem 5px rgba(51, 51, 51, 0.123));
   outline: none !important;
@@ -94,15 +98,15 @@ a {
 }
 
 .menu-item {
-  font-family: "Nunito Sans", sans-serif !important;
+  font-family: "Open Sans", sans-serif !important;
   font-weight: bold !important;
 }
 #filter-label {
   color: black;
-  background-color: white;
+  background-color: tranparent;
   border-radius: 0.5rem;
   padding: 2px 5px 0 5px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* Misc  */
@@ -169,6 +173,10 @@ a {
   height: 3rem;
   width: auto;
   border: none;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15), 
+  0px 4px 8px rgba(0,0,0,0.15), 
+  0px 4px 8px rgba(0,0,0,0.15), 
+  0px 4px 8px rgba(0,0,0,0.15);
   padding: 1rem 3rem;
   filter: drop-shadow(0 0.3rem 5px rgba(51, 51, 51, 0.123));
   display: inline-flex;
@@ -177,6 +185,8 @@ a {
 }
 .back-btn:hover {
   cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
 }
 .back-icon {
   margin-right: 0.5rem;
@@ -202,6 +212,10 @@ a {
   border-radius: 0.1rem;
   margin: 0 1rem 1rem 0;
   border: none;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15), 
+  0px 4px 8px rgba(0,0,0,0.15), 
+  0px 4px 8px rgba(0,0,0,0.15), 
+  0px 4px 8px rgba(0,0,0,0.15);
   width: 5rem;
   padding: 0.5rem 1rem;
   filter: drop-shadow(0 0.3rem 5px rgba(51, 51, 51, 0.123));
