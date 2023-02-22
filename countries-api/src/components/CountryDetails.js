@@ -12,10 +12,12 @@ function CountryDetails({ data, darkMode }) {
   // Lifecyle Methods
   useEffect(() => {
     loadCountry();
-  }, []);
+  // eslint-disable-next-line no-use-before-define
+  }, [loadCountry]);
   // Regular Methods
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const loadCountry = function () {
-    fetch(`https://restcountries.com/v3/name/${countryName}`)
+    fetch(`https://restcountries.com/v3.1/name/${countryName}`)
       .then((res) => res.json())
       .then((data) => {
         setcountry(data[0]);

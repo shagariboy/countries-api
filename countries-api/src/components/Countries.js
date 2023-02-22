@@ -1,5 +1,5 @@
 import React from "react";
-import Country from "./Country";
+import Country from "../components/Country";
 function Countries({ data, page, darkMode, handler }) {
   const setCountry = (country) => {
     handler(country);
@@ -15,9 +15,6 @@ function Countries({ data, page, darkMode, handler }) {
     return <Country data={country} darkMode={darkMode} handler={setCountry} />;
   });
   // Regular Methods
-  const loadCountries = function (countries) {
-    countries.map((country) => <Country country={country} />);
-  };
 
   return countries;
 }
